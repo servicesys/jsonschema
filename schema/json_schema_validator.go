@@ -7,7 +7,9 @@ import (
 )
 
 type JsonSchemaValidator interface {
-	validator(schemaRaw string, jsonRaw string) (bool, []string)
+
+	ValidatorStr(schemaRaw string, jsonRaw string) (bool, []string)
+	ValidatorBytes(schemaBytes []byte, jsonBytes  []byte) (bool, []string)
 }
 
 type JsonSchemaValidatorQri struct {
